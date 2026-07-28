@@ -154,9 +154,9 @@ model control at all, say so and run everything on the session model.
 
 | Tier | Planning | Build | Advisor / escalation |
 |---|---|---|---|
-| Economy | Opus 4.8 @ medium | Sonnet 5 @ low | Opus 4.8 @ high |
-| Business | Fable @ medium | Opus 4.8 @ low | Fable @ high |
-| First Class | Fable Ultracode | Opus 4.8 @ medium | Fable Ultracode |
+| Economy | Opus 5 @ medium | Sonnet 5 @ low | Opus 5 @ high |
+| Business | Fable @ medium | Opus 5 @ low | Fable @ high |
+| First Class | Fable Ultracode | Opus 5 @ medium | Fable Ultracode |
 
 **B. Execution mode / parallelism:**
 - **Lite Mode** — single agent, no sub-agent fan-out, no worktrees; plan and build
