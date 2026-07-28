@@ -37,26 +37,22 @@ flowchart TD
 ### The Build Loop (Stage 4) in Detail
 
 ```mermaid
-flowchart LR
-    subgraph Orchestrator
-        A["Derive ready tasks"] --> B["Dispatch sub-agents"]
-        B --> |"one per task, in parallel"| C["Worktree per agent"]
-    end
+flowchart TD
+    A["Derive ready tasks"] --> B["Dispatch sub-agents"]
+    B --> |"one per task, in parallel"| C["Each agent gets its own worktree"]
+    C --> D["Agent builds task in isolation"]
+    D --> E{"Agent result"}
+    E --> |"in_review"| F["Phase gate QA"]
+    E --> |"blocked"| G["Advisor diagnoses root cause"]
+    G --> |"fix plan injected"| B
+    F --> |"pass"| H["Merge branch + clean worktree"]
+    F --> |"fail"| B
+    H --> I{"More tasks in phase?"}
+    I --> |"yes"| A
+    I --> |"no"| J["Phase complete"]
 
-    subgraph "Sub-agent (isolated worktree)"
-        C --> D["Build task"]
-        D --> E{"Result"}
-        E --> |"in_review"| F["Return report"]
-        E --> |"blocked"| G["Return blocker"]
-    end
-
-    F --> H["Phase gate QA"]
-    G --> I["Advisor diagnoses"]
-    I --> |"fix plan"| B
-    H --> |"pass"| J["Merge + clean worktree"]
-    H --> |"fail"| B
-
-    style I fill:#F59E0B,stroke:#F59E0B,color:#000
+    style G fill:#F59E0B,stroke:#F59E0B,color:#000
+    style H fill:#10B981,stroke:#10B981,color:#fff
     style J fill:#10B981,stroke:#10B981,color:#fff
 ```
 
