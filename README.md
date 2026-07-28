@@ -1,3 +1,5 @@
+![banner](banner-buildthis.png)
+
 # /buildthis - Autonomous Project Orchestrator for Claude
 
 A single skill file that turns Claude into a full project manager. One command decomposes a plan, spins up parallel sub-agents in isolated git worktrees, runs QA, tracks costs, and delivers a tabbed HTML report.
@@ -162,6 +164,6 @@ MIT
 
 ## Author
 
-Built by [Imiel Visser](https://imiel.dev) ([@imiel_visser](https://x.com/imiel_visser))
+Built by [Imiel Visser](https://imiel.dev) ([@imiel_visser](https://x.com/imiel_visser) | [LinkedIn](https://linkedin.com/in/imielvisser))
 
 Read the full breakdown: [I Built a Skill That Turns Claude Into a Project Manager](https://imiel.dev/blog/buildthis-autonomous-project-orchestrator-2026-guide)
