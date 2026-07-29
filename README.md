@@ -97,7 +97,7 @@ stateDiagram-v2
 - **Worktree isolation** - Each concurrent task gets its own git worktree, preventing agent collisions
 - **Strict state machine** - 10 states with defined transitions, survives session drops and context resets
 - **Three-tier escalation** - Builder agents, Advisor agents, and the Orchestrator, each with a defined role
-- **Budget tiers** - Economy, Business, and First Class model configurations for different cost/quality tradeoffs
+- **Five budget tiers** - Lite (1 agent), Economy (3), Business (5), Premier (10), First Class (20 "Crazy Mode") for different cost/quality tradeoffs
 - **Sensitivity profiles** - Standard (dev), Elevated (stage), Maximum (production) with increasing safeguards
 - **Cost tracking** - Per-phase token usage and estimated USD in `Build/cost.json`
 - **Design bar** - Awwwards-premium default for all UI work; generic output is treated as a QA failure
@@ -121,6 +121,14 @@ cp SKILL.md ~/.claude/commands/buildthis.md
 mkdir -p .claude/skills/buildthis
 cp SKILL.md .claude/skills/buildthis/SKILL.md
 ```
+
+**Or just ask Claude to install it:**
+
+```
+Install the /buildthis skill from https://github.com/imielvisser/buildthis_Claude_Skill
+```
+
+After installing, restart your Claude session to activate the skill.
 
 ## Usage
 
